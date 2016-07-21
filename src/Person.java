@@ -1,16 +1,17 @@
 import java.util.Comparator;
+import java.util.List;
 
 public class Person {
-    private Long id;
     private String name;
     private Integer age;
+    private Person boss;
+    private List<Person> friends;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public Person(String name, Integer age, Person boss, List<Person> friends) {
+        this.name = name;
+        this.age = age;
+        this.boss = boss;
+        this.friends = friends;
     }
 
     public String getName() {
@@ -29,14 +30,29 @@ public class Person {
         this.age = age;
     }
 
+    public Person getBoss() {
+        return boss;
+    }
+
+    public void setBoss(Person boss) {
+        this.boss = boss;
+    }
+
+    public List<Person> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(List<Person> friends) {
+        this.friends = friends;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", age=" + age +
+                ", boss=" + boss +
+                ", friends=" + friends +
                 '}';
     }
-
-
 }
